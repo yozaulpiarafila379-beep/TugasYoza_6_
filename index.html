@@ -284,3 +284,73 @@ Tampilkan VS Code 1
 
 <img id="img1" src="vscode1.png" style="display:none;">
 </div>
+
+<!-- 2 -->
+<div class="section">
+<h2>2.Dengan Generic</h2>
+    <ul>
+  <li>
+    Pada program ini, <b>Box&lt;T&gt;</b> digunakan sebagai class generic 
+    yang dapat menyimpan berbagai tipe data sesuai dengan tipe yang diberikan.
+  </li>
+
+  <li>
+    Tipe <b>&lt;T&gt;</b> memungkinkan class <b>Box</b> menjadi fleksibel, 
+    sehingga dapat digunakan untuk menyimpan data bertipe <b>int</b>, 
+    <b>String</b>, atau tipe lainnya.
+  </li>
+
+  <li>
+    Pada fungsi <b>main()</b>, dibuat dua objek yaitu 
+    <b>Box&lt;int&gt;</b> dan <b>Box&lt;String&gt;</b> untuk menyimpan 
+    data dengan tipe yang berbeda.
+  </li>
+
+  <li>
+    Program kemudian menampilkan isi dari masing-masing objek menggunakan 
+    <b>print()</b>, sehingga terlihat bahwa setiap Box menyimpan data 
+    sesuai dengan tipe yang telah ditentukan.
+  </li>
+
+  <li>
+    Dengan penggunaan generic, program menjadi lebih aman karena tipe data 
+    tidak dapat diubah sembarangan, sehingga menghindari kesalahan tipe data 
+    saat program dijalankan.
+  </li>
+</ul>
+<h3>Kode Program VS Code:</h3>
+<div class="code-box">
+<pre><code>
+    // Nama  : Yoza Ulpia Rafila
+// NIM   : 251410004
+// Kelas : SI.2A
+
+// =====================
+// DENGAN GENERIC
+// =====================
+class Box<T> {
+  T data;
+
+  Box(this.data);
+}
+
+void main() {
+  // Data awal
+  var intBox = Box<int>(42);
+  var stringBox = Box<String>("Hello");
+
+  // Menampilkan data
+  print("Nilai int: ${intBox.data}");
+  print("Nilai string: ${stringBox.data}");
+
+  // Contoh keamanan (tidak bisa diubah tipe)
+  // intBox.data = "Hello"; // ❌ ERROR
+}
+</code></pre>
+</div>
+<button class="button" onclick="showContent('img2')">
+Tampilkan VS Code 2
+</button>
+
+<img id="img2" src="vscode2.png" style="display:none;">
+</div>
