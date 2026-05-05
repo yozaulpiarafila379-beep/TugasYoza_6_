@@ -823,3 +823,70 @@ Tampilkan VS Code 8
 
 <img id="img8" src="vscode8.png" style="display:none;">
 </div>            
+
+<!-- 9 -->
+<div class="section">
+<h2>9.Pembatasan Tipe Pada Interface dan Class</h2>
+<ul>
+  <li>
+    Pada program ini, <b>printIterable&lt;T extends Iterable&lt;dynamic&gt;&gt;</b> 
+    merupakan <i>generic function</i> yang digunakan untuk mencetak semua elemen 
+    dari sebuah data yang bersifat iterable.
+  </li>
+
+  <li>
+    Batasan <b>&lt;T extends Iterable&lt;dynamic&gt;&gt;</b> berarti fungsi ini 
+    hanya dapat menerima tipe data yang bisa diiterasi seperti <b>List</b> dan <b>Set</b>.
+  </li>
+
+  <li>
+    Fungsi <b>printIterable()</b> akan melakukan perulangan menggunakan 
+    <b>for-in loop</b> untuk menampilkan setiap elemen yang ada di dalam 
+    koleksi data.
+  </li>
+
+  <li>
+    Pada fungsi <b>main()</b>, digunakan <b>List&lt;int&gt;</b> dan 
+    <b>Set&lt;String&gt;</b> sebagai contoh data yang valid karena keduanya 
+    termasuk tipe Iterable.
+  </li>
+
+  <li>
+    Baris <b>printIterable&lt;int&gt;(10)</b> akan menghasilkan error karena 
+    tipe <b>int</b> bukan termasuk Iterable, sehingga tidak dapat digunakan 
+    dalam fungsi ini.
+  </li>
+
+  <li>
+    Dengan penggunaan bounded generic pada Iterable, program menjadi lebih 
+    aman karena hanya menerima struktur data yang dapat diiterasi, sehingga 
+    menghindari kesalahan saat runtime.
+  </li>
+</ul>    
+<h3>Kode Program VS Code:</h3>
+<div class="code-box">
+<pre><code>
+// Nama  : Yoza Ulpia Rafila
+// NIM   : 251410004
+// Kelas : SI.2A
+
+void printIterable<T extends Iterable<dynamic>>(T iterable) {
+  for (var item in iterable) {
+    print(item);
+  }
+}
+
+void main() {
+  printIterable<List<int>>([1, 2, 3]);
+  printIterable<Set<String>>({'apple', 'banana'});
+
+  // printIterable<int>(10); // ❌ Error
+}
+</code></pre>
+</div>
+<button class="button" onclick="showContent('img9')">
+Tampilkan VS Code 9
+</button>
+
+<img id="img9" src="vscode9.png" style="display:none;">
+</div>                  
