@@ -1329,3 +1329,119 @@ Tampilkan VS Code 13
 <img id="img13" src="vscode13.png" style="display:none;">
 </div>                  
       
+<!-- 14 -->
+<div class="section">
+<h2>14.Challange</h2>
+<ul>
+  <li>
+    Pada program ini, <b>Repository&lt;T&gt;</b> merupakan <i>generic class</i> 
+    yang digunakan untuk mengelola data dalam bentuk list dengan tipe yang fleksibel.
+  </li>
+
+  <li>
+    Tipe <b>&lt;T&gt;</b> memungkinkan class <b>Repository</b> digunakan untuk 
+    berbagai jenis data seperti <b>String</b>, <b>int</b>, maupun objek seperti <b>Product</b>.
+  </li>
+
+  <li>
+    Method <b>add()</b> digunakan untuk menambahkan data ke dalam repository, 
+    <b>getAll()</b> untuk mengambil semua data, dan <b>remove()</b> untuk menghapus data tertentu.
+  </li>
+
+  <li>
+    Class <b>Product</b> digunakan sebagai contoh data objek yang memiliki atribut 
+    <b>name</b> dan <b>price</b>, serta method <b>toString()</b> untuk menampilkan data dengan format yang lebih jelas.
+  </li>
+
+  <li>
+    Pada fungsi <b>main()</b>, dibuat dua repository yaitu 
+    <b>Repository&lt;String&gt;</b> untuk data pengguna dan 
+    <b>Repository&lt;Product&gt;</b> untuk data produk.
+  </li>
+
+  <li>
+    Program kemudian menampilkan isi data menggunakan <b>print()</b>, 
+    serta melakukan operasi penghapusan data untuk menunjukkan bahwa repository 
+    dapat dikelola dengan mudah.
+  </li>
+
+  <li>
+    Dengan penggunaan generic, satu class dapat digunakan untuk berbagai tipe data, 
+    sehingga program menjadi lebih fleksibel, reusable, dan type-safe.
+  </li>
+</ul>    
+<h3>Kode Program VS Code:</h3>
+<div class="code-box">
+<pre><code>
+// Nama  : Yoza Ulpia Rafila
+// NIM   : 251410004
+// Kelas : SI.2A
+
+// =======================
+// GENERIC REPOSITORY
+// =======================
+class Repository<T> {
+  final List<T> _data = [];
+
+  // tambah data
+  void add(T item) {
+    _data.add(item);
+  }
+
+  // ambil semua data
+  List<T> getAll() {
+    return _data;
+  }
+
+  // hapus data
+  void remove(T item) {
+    _data.remove(item);
+  }
+}
+
+// =======================
+// CONTOH CLASS
+// =======================
+class Product {
+  String name;
+  int price;
+
+  Product(this.name, this.price);
+
+  @override
+  String toString() {
+    return 'Product(name: $name, price: $price)';
+  }
+}
+
+// =======================
+// MAIN
+// =======================
+void main() {
+  // Repository untuk String
+  var userRepo = Repository<String>();
+  userRepo.add("Alice");
+  userRepo.add("Bob");
+
+  print("User Repo: ${userRepo.getAll()}");
+
+  // Repository untuk Product
+  var productRepo = Repository<Product>();
+  productRepo.add(Product("Laptop", 1000));
+  productRepo.add(Product("Mouse", 200));
+
+  print("Product Repo: ${productRepo.getAll()}");
+
+  // Hapus data
+  userRepo.remove("Alice");
+  print("User Repo setelah hapus: ${userRepo.getAll()}");
+}    
+</code></pre>
+</div>
+<button class="button" onclick="showContent('img14')">
+Tampilkan VS Code 14
+</button>
+
+<img id="img14" src="vscode14.png" style="display:none;">
+</div>                  
+      
