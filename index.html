@@ -354,3 +354,91 @@ Tampilkan VS Code 2
 
 <img id="img2" src="vscode2.png" style="display:none;">
 </div>
+
+<!-- 3 -->
+<div class="section">
+<h2>3.Sintaks Generic Class dan Function</h2>
+<ul>
+  <li>
+    Pada program ini, <b>MyClass&lt;T&gt;</b> digunakan sebagai class generic 
+    yang dapat menyimpan berbagai tipe data sesuai dengan tipe yang diberikan.
+  </li>
+
+  <li>
+    Tipe <b>&lt;T&gt;</b> membuat class <b>MyClass</b> menjadi fleksibel, 
+    sehingga dapat digunakan untuk menyimpan data bertipe <b>int</b>, 
+    <b>String</b>, atau tipe lainnya.
+  </li>
+
+  <li>
+    Method <b>getData()</b> digunakan untuk mengambil nilai yang tersimpan 
+    di dalam class sesuai dengan tipe data yang telah ditentukan.
+  </li>
+
+  <li>
+    Selain itu, terdapat <b>generic function</b> yaitu <b>myFunc&lt;T&gt;</b> 
+    yang dapat menerima dan mengembalikan nilai dengan tipe yang sama, 
+    sehingga fungsi ini juga bersifat fleksibel terhadap berbagai tipe data.
+  </li>
+
+  <li>
+    Pada fungsi <b>main()</b>, dibuat objek <b>MyClass&lt;int&gt;</b> dan 
+    <b>MyClass&lt;String&gt;</b>, serta pemanggilan fungsi 
+    <b>myFunc</b> dengan tipe <b>int</b> dan <b>String</b>.
+  </li>
+
+  <li>
+    Program kemudian menampilkan hasil menggunakan <b>print()</b>, 
+    sehingga terlihat bahwa setiap data diproses sesuai dengan tipe 
+    yang telah ditentukan.
+  </li>
+
+  <li>
+    Dengan penggunaan generic, program menjadi lebih aman dan terstruktur 
+    karena tipe data sudah ditentukan sejak awal, sehingga mengurangi 
+    kesalahan saat program dijalankan.
+  </li>
+</ul>
+   <h3>Kode Program VS Code:</h3>
+<div class="code-box">
+<pre><code>
+    // Nama  : Yoza Ulpia Rafila
+// NIM   : 251410004
+// Kelas : SI.2A
+
+class MyClass<T> {
+  T data;
+
+  MyClass(this.data);
+
+  T getData() {
+    return data;
+  }
+}
+
+// Generic function
+T myFunc<T>(T value) {
+  return value;
+}
+
+void main() {
+  var myInt = MyClass<int>(10);
+  var myString = MyClass<String>("test");
+
+  print(myInt.getData());
+  print(myString.getData());
+
+  var intValue = myFunc<int>(100);
+  var stringValue = myFunc<String>("hello");
+
+  print(intValue);
+  print(stringValue);
+}
+</code></pre>
+</div>
+<button class="button" onclick="showContent('img3')">
+Tampilkan VS Code 3
+</button>
+
+<img id="img3" src="vscode3.png" style="display:none;">
+</div>
