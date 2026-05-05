@@ -578,7 +578,7 @@ Tampilkan VS Code 4
    <h3>Kode Program VS Code:</h3>
 <div class="code-box">
 <pre><code>
-    // Nama  : Yoza Ulpia Rafila
+// Nama  : Yoza Ulpia Rafila
 // NIM   : 251410004
 // Kelas : SI.2A
 
@@ -610,4 +610,68 @@ Tampilkan VS Code 5
 </button>
 
 <img id="img5" src="vscode5.png" style="display:none;">
+</div>
+      
+<!-- 6 -->
+<div class="section">
+<h2>6.Penerapan Generic Menggabungkan Dua Tipe Data</h2>
+<ul>
+  <li>
+    Pada program ini, <b>combine&lt;T, U&gt;</b> merupakan <i>generic function</i> 
+    yang digunakan untuk menggabungkan dua nilai dengan tipe data yang berbeda.
+  </li>
+
+  <li>
+    Parameter <b>&lt;T&gt;</b> dan <b>&lt;U&gt;</b> memungkinkan fungsi ini 
+    menerima dua jenis tipe data yang berbeda, sehingga lebih fleksibel digunakan.
+  </li>
+
+  <li>
+    Fungsi <b>combine()</b> akan mengembalikan hasil berupa <b>String</b> 
+    yang berisi gabungan dari <i>value1</i> dan <i>value2</i>.
+  </li>
+
+  <li>
+    Pada fungsi <b>main()</b>, dilakukan pemanggilan fungsi 
+    <b>combine&lt;String, int&gt;</b> untuk menggabungkan teks dan angka, 
+    serta <b>combine&lt;int, double&gt;</b> untuk menggabungkan dua angka 
+    dengan tipe berbeda.
+  </li>
+
+  <li>
+    Hasil dari fungsi kemudian ditampilkan menggunakan <b>print()</b>, 
+    sehingga terlihat bahwa fungsi dapat bekerja dengan berbagai kombinasi tipe data.
+  </li>
+
+  <li>
+    Dengan penggunaan generic function, program menjadi lebih fleksibel 
+    karena satu fungsi dapat digunakan untuk berbagai jenis tipe data tanpa 
+    harus membuat fungsi yang berbeda-beda.
+  </li>
+</ul>    
+<h3>Kode Program VS Code:</h3>
+<div class="code-box">
+<pre><code>
+// Nama  : Yoza Ulpia Rafila
+// NIM   : 251410004
+// Kelas : SI.2A
+
+String combine<T, U>(T value1, U value2) {
+  return '$value1, $value2';
+}
+
+void main() {
+  var result1 = combine<String, int>('Number is', 10);
+  print(result1);
+
+  var result2 = combine<int, double>(10, 20.5);
+  print(result2);
+}
+</code></pre>
+</div>
+<button class="button" onclick="showContent('img6')">
+Tampilkan VS Code 6
+</button>
+
+<img id="img6" src="vscode6.png" style="display:none;">
 </div>
