@@ -997,33 +997,52 @@ Tampilkan VS Code 10
 <h2>11.Praktik Generic Class & Fungsi</h2>
 <ul>
   <li>
-    <b>Repository&lt;T&gt;</b> adalah generic class yang digunakan untuk menyimpan dan mengelola data dalam bentuk list dengan tipe yang fleksibel.
+    Pada program ini, <b>Repository&lt;T&gt;</b> merupakan <i>generic class</i> 
+    yang digunakan untuk mengelola dan menyimpan data dalam bentuk list 
+    dengan tipe yang fleksibel.
   </li>
 
   <li>
-    Tipe <b>&lt;T&gt;</b> membuat Repository dapat digunakan untuk berbagai jenis data seperti int, String, atau tipe lainnya.
+    Tipe <b>&lt;T&gt;</b> memungkinkan class <b>Repository</b> menyimpan berbagai 
+    jenis data seperti <b>int</b>, <b>String</b>, atau tipe lainnya sesuai kebutuhan.
   </li>
 
   <li>
-    Method <b>save()</b> digunakan untuk menambahkan data ke dalam list, <b>getById()</b> untuk mengambil data berdasarkan index, dan <b>getAll()</b> untuk mengambil semua data.
+    Method <b>save()</b> digunakan untuk menambahkan data ke dalam list, 
+    sedangkan <b>getById()</b> digunakan untuk mengambil data berdasarkan indeks, 
+    dan <b>getAll()</b> untuk menampilkan seluruh data.
   </li>
 
   <li>
-    <b>swap&lt;T&gt;</b> adalah generic function yang digunakan untuk menukar dua elemen dalam sebuah list tanpa bergantung pada tipe data.
+    Fungsi <b>swap&lt;T&gt;</b> merupakan <i>generic function</i> yang digunakan 
+    untuk menukar posisi dua elemen dalam sebuah list tanpa memperhatikan 
+    tipe data yang digunakan.
   </li>
 
   <li>
-    <b>Triple&lt;A, B, C&gt;</b> adalah generic class dengan tiga parameter tipe yang digunakan untuk menyimpan tiga jenis data berbeda dalam satu objek.
+    Class <b>Triple&lt;A, B, C&gt;</b> merupakan generic class dengan tiga 
+    parameter tipe yang digunakan untuk menyimpan tiga jenis data yang berbeda 
+    dalam satu objek.
   </li>
 
   <li>
-    Di dalam fungsi main, Repository digunakan untuk tipe int, swap digunakan pada list, dan Triple digunakan untuk menggabungkan String, int, dan double.
+    Pada fungsi <b>main()</b>, digunakan <b>Repository&lt;int&gt;</b> untuk 
+    menyimpan data angka, kemudian dilakukan operasi swap pada list, serta 
+    membuat objek <b>Triple&lt;String, int, double&gt;</b>.
   </li>
 
   <li>
-    Penggunaan generic membuat kode lebih fleksibel, reusable, dan type-safe karena dapat digunakan untuk berbagai tipe data tanpa mengubah struktur program.
+    Program kemudian menampilkan hasil menggunakan <b>print()</b> untuk 
+    menunjukkan bahwa generic dapat digunakan secara fleksibel pada class, 
+    fungsi, dan struktur data.
   </li>
-</ul>    
+
+  <li>
+    Dengan penerapan generic, program menjadi lebih reusable, fleksibel, 
+    dan type-safe karena dapat digunakan untuk berbagai jenis data tanpa 
+    mengubah struktur kode.
+  </li>
+</ul>
 <h3>Kode Program VS Code:</h3>
 <div class="code-box">
 <pre><code>
