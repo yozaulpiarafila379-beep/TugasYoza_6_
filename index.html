@@ -1209,3 +1209,123 @@ Tampilkan VS Code 12
 <img id="img12" src="vscode12.png" style="display:none;">
 </div>                  
       
+<!-- 13 -->
+<div class="section">
+<h2>13.Latihan</h2>
+<ul>
+  <li>
+    Pada program ini, <b>Stack&lt;T&gt;</b> merupakan <i>generic class</i> 
+    yang digunakan untuk menerapkan struktur data stack (LIFO) dengan tipe data yang fleksibel.
+  </li>
+
+  <li>
+    Tipe <b>&lt;T&gt;</b> memungkinkan class <b>Stack</b> menyimpan berbagai jenis data 
+    seperti <b>int</b>, <b>String</b>, atau tipe lainnya sesuai kebutuhan.
+  </li>
+
+  <li>
+    Method <b>push()</b> digunakan untuk menambahkan data ke dalam stack, 
+    <b>pop()</b> untuk mengambil dan menghapus data terakhir, 
+    dan <b>peek()</b> untuk melihat data teratas tanpa menghapusnya.
+  </li>
+
+  <li>
+    Fungsi <b>mergeLists&lt;T&gt;</b> merupakan <i>generic function</i> 
+    yang digunakan untuk menggabungkan dua list menjadi satu list baru 
+    dengan tipe data yang sama.
+  </li>
+
+  <li>
+    Class <b>Response&lt;T&gt;</b> merupakan generic class yang digunakan 
+    untuk menampung hasil proses, baik berupa <b>data</b> maupun <b>error</b>.
+  </li>
+
+  <li>
+    Pada fungsi <b>main()</b>, dibuat objek <b>Stack&lt;int&gt;</b> untuk 
+    menyimpan angka, kemudian dilakukan operasi push, pop, dan peek.
+  </li>
+
+  <li>
+    Selain itu, digunakan fungsi <b>mergeLists</b> untuk menggabungkan dua list, 
+    serta objek <b>Response&lt;String&gt;</b> untuk menampilkan hasil response.
+  </li>
+
+  <li>
+    Dengan penggunaan generic, program menjadi lebih fleksibel, reusable, 
+    dan type-safe karena satu struktur data dan fungsi dapat digunakan 
+    untuk berbagai tipe data tanpa perubahan kode utama.
+  </li>
+</ul>    
+<h3>Kode Program VS Code:</h3>
+<div class="code-box">
+<pre><code>
+// Nama  : Yoza Ulpia Rafila
+// NIM   : 251410004
+// Kelas : SI.2A
+
+// =======================
+// 1. STACK<T>
+// =======================
+class Stack<T> {
+  final List<T> _items = [];
+
+  void push(T value) {
+    _items.add(value);
+  }
+
+  T? pop() {
+    if (_items.isEmpty) return null;
+    return _items.removeLast();
+  }
+
+  T? peek() {
+    if (_items.isEmpty) return null;
+    return _items.last;
+  }
+}
+
+// =======================
+// 2. MERGE LISTS
+// =======================
+List<T> mergeLists<T>(List<T> a, List<T> b) {
+  return [...a, ...b];
+}
+
+// =======================
+// 3. RESPONSE<T>
+// =======================
+class Response<T> {
+  T? data;
+  String? error;
+
+  Response({this.data, this.error});
+}
+
+// =======================
+// MAIN
+// =======================
+void main() {
+  // Stack
+  var stack = Stack<int>();
+  stack.push(10);
+  stack.push(20);
+  print('Peek: ${stack.peek()}');
+  print('Pop: ${stack.pop()}');
+
+  // Merge Lists
+  var result = mergeLists([1, 2], [3, 4]);
+  print('Merge: $result');
+
+  // Response
+  var res = Response<String>(data: "Berhasil");
+  print('Response: ${res.data}');
+}    
+</code></pre>
+</div>
+<button class="button" onclick="showContent('img13')">
+Tampilkan VS Code 13
+</button>
+
+<img id="img13" src="vscode13.png" style="display:none;">
+</div>                  
+      
