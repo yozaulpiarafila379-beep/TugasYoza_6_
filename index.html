@@ -889,3 +889,106 @@ Tampilkan VS Code 9
 
 <img id="img9" src="vscode9.png" style="display:none;">
 </div>                  
+
+<!-- 10 -->
+<div class="section">
+<h2>10.Pembatasan Tipe Dengan Class Abstarct</h2>
+<ul>
+  <li>
+    Pada program ini, <b>Animal</b> merupakan <i>abstract class</i> yang 
+    berfungsi sebagai dasar (blueprint) untuk kelas turunan lainnya dan 
+    memiliki method abstrak <b>makeSound()</b>.
+  </li>
+
+  <li>
+    Class <b>Dog</b> dan <b>Cat</b> mengimplementasikan (implements) class 
+    <b>Animal</b>, sehingga wajib mengoverride method <b>makeSound()</b> 
+    sesuai dengan perilaku masing-masing hewan.
+  </li>
+
+  <li>
+    Class <b>AnimalCage&lt;T extends Animal&gt;</b> merupakan generic class 
+    yang hanya dapat menerima tipe data yang merupakan turunan dari 
+    <b>Animal</b>.
+  </li>
+
+  <li>
+    Batasan <b>&lt;T extends Animal&gt;</b> memastikan bahwa hanya objek 
+    yang memiliki perilaku <b>makeSound()</b> yang dapat digunakan dalam 
+    class ini.
+  </li>
+
+  <li>
+    Method <b>sound()</b> digunakan untuk memanggil method <b>makeSound()</b> 
+    dari objek hewan yang disimpan di dalam kandang.
+  </li>
+
+  <li>
+    Pada fungsi <b>main()</b>, dibuat objek <b>AnimalCage&lt;Dog&gt;</b> 
+    dan <b>AnimalCage&lt;Cat&gt;</b> untuk menunjukkan bahwa class ini dapat 
+    digunakan dengan berbagai jenis hewan.
+  </li>
+
+  <li>
+    Baris <b>AnimalCage&lt;String&gt;</b> akan menghasilkan error karena 
+    String bukan turunan dari <b>Animal</b>.
+  </li>
+
+  <li>
+    Dengan penggunaan bounded generic dan konsep inheritance, program menjadi 
+    lebih aman, terstruktur, dan mendukung prinsip polymorphism dalam OOP.
+  </li>
+</ul>    
+<h3>Kode Program VS Code:</h3>
+<div class="code-box">
+<pre><code>
+// Nama  : Yoza Ulpia Rafila
+// NIM   : 251410004
+// Kelas : SI.2A
+
+abstract class Animal {
+  void makeSound();
+}
+
+class Dog implements Animal {
+  @override
+  void makeSound() {
+    print("Woof!");
+  }
+}
+
+class Cat implements Animal {
+  @override
+  void makeSound() {
+    print("Meow!");
+  }
+}
+
+class AnimalCage<T extends Animal> {
+  T animal;
+
+  AnimalCage(this.animal);
+
+  void sound() {
+    animal.makeSound();
+  }
+}
+
+void main() {
+  var dogCage = AnimalCage<Dog>(Dog());
+  dogCage.sound();
+
+  var catCage = AnimalCage<Cat>(Cat());
+  catCage.sound();
+
+  // var wrong = AnimalCage<String>("test"); // ❌ Error
+}
+</code></pre>
+</div>
+<button class="button" onclick="showContent('img10')">
+Tampilkan VS Code 10
+</button>
+
+<img id="img10" src="vscode10.png" style="display:none;">
+</div>                  
+      
