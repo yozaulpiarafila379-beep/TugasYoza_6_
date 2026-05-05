@@ -256,27 +256,25 @@ function runDart(id, url) {
 // =====================
 // TANPA GENERIC
 // =====================
-// Class ini menggunakan dynamic (bebas tipe data)
 class Box {
   dynamic data;
 
-  // Constructor
   Box(this.data);
 }
 
 void main() {
-  // Menyimpan data integer
+  // Menyimpan data awal
   var box = Box(42);
 
-  // Mengambil data
+  // Menampilkan data awal
   int value = box.data;
-  print("Nilai: $value");
+  print("Nilai awal: $value");
 
-  // Mengubah isi menjadi String (tidak aman)
+  // Mengubah data
   box.data = "Hello";
 
-  // Jika dipaksa ke int bisa error saat runtime
-  // int angka = box.data; // ❌ Runtime error
+  // Menampilkan data setelah diubah
+  print("Data setelah diubah: ${box.data}");
 }
 </code></pre>
 </div>
