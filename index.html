@@ -759,3 +759,67 @@ Tampilkan VS Code 7
 
 <img id="img7" src="vscode7.png" style="display:none;">
 </div>      
+
+<!-- 8 -->
+<div class="section">
+<h2>8.Type Inference (Inferensi Tipe)</h2>
+<ul>
+  <li>
+    Pada program ini, <b>myFunc&lt;T&gt;</b> merupakan <i>generic function</i> 
+    yang digunakan untuk menerima dan mengembalikan nilai dengan tipe data yang sama.
+  </li>
+
+  <li>
+    Tipe <b>&lt;T&gt;</b> membuat fungsi ini bersifat fleksibel karena dapat 
+    digunakan untuk berbagai jenis data seperti <b>int</b>, <b>String</b>, 
+    dan tipe data lainnya.
+  </li>
+
+  <li>
+    Fungsi <b>myFunc()</b> hanya mengembalikan nilai yang dikirimkan tanpa 
+    mengubah tipe datanya, sehingga tetap sesuai dengan input yang diberikan.
+  </li>
+
+  <li>
+    Pada fungsi <b>main()</b>, pemanggilan <b>myFunc(10)</b> secara otomatis 
+    akan bertipe <b>int</b>, dan <b>myFunc("test")</b> akan bertipe 
+    <b>String</b> karena Dart mendeteksi tipe secara otomatis (<i>type inference</i>).
+  </li>
+
+  <li>
+    Method <b>runtimeType</b> digunakan untuk menampilkan tipe data asli 
+    dari variabel saat program dijalankan.
+  </li>
+
+  <li>
+    Dengan penggunaan generic function, program menjadi lebih sederhana, 
+    fleksibel, dan tetap aman karena tipe data tetap konsisten antara input 
+    dan output.
+  </li>
+</ul>    
+<h3>Kode Program VS Code:</h3>
+<div class="code-box">
+<pre><code>
+// Nama  : Yoza Ulpia Rafila
+// NIM   : 251410004
+// Kelas : SI.2A
+
+T myFunc<T>(T value) {
+  return value;
+}
+
+void main() {
+  var intValue = myFunc(10); // otomatis int
+  print(intValue.runtimeType);
+
+  var stringValue = myFunc("test"); // otomatis String
+  print(stringValue.runtimeType);
+}    
+</code></pre>
+</div>
+<button class="button" onclick="showContent('img8')">
+Tampilkan VS Code 8
+</button>
+
+<img id="img8" src="vscode8.png" style="display:none;">
+</div>            
