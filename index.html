@@ -218,3 +218,71 @@ function runDart(id, url) {
 
 </div>
 
+<!-- 1 -->
+<div class="section">
+<h2>1.Tanpa Generic</h2>
+<ul>
+  <li>
+    Pada program ini, <b>Box</b> merupakan class yang digunakan untuk menyimpan data.
+  </li>
+
+  <li>
+    Class <b>Box</b> menggunakan tipe data <b>dynamic</b>, sehingga dapat menampung berbagai jenis data.
+  </li>
+
+  <li>
+    Data yang disimpan awalnya berupa <b>int</b>, kemudian dapat diubah menjadi <b>String</b>.
+  </li>
+
+  <li>
+    Karena tidak ada pembatasan tipe data, program berpotensi mengalami kesalahan.
+  </li>
+
+  <li>
+    Kesalahan biasanya terjadi saat program dijalankan <i>(runtime error)</i>.
+  </li>
+
+  <li>
+    Dengan demikian, penggunaan <b>dynamic</b> bersifat fleksibel namun kurang aman.
+  </li>
+</ul>
+<h3>Kode Program VS Code:</h3>
+<div class="code-box">
+<pre><code>
+// Nama  : Yoza Ulpia Rafila
+// NIM   : 251410004
+// Kelas : SI.2A
+
+// =====================
+// TANPA GENERIC
+// =====================
+// Class ini menggunakan dynamic (bebas tipe data)
+class Box {
+  dynamic data;
+
+  // Constructor
+  Box(this.data);
+}
+
+void main() {
+  // Menyimpan data integer
+  var box = Box(42);
+
+  // Mengambil data
+  int value = box.data;
+  print("Nilai: $value");
+
+  // Mengubah isi menjadi String (tidak aman)
+  box.data = "Hello";
+
+  // Jika dipaksa ke int bisa error saat runtime
+  // int angka = box.data; // ❌ Runtime error
+}
+</code></pre>
+</div>
+<button class="button" onclick="showContent('img1')">
+Tampilkan VS Code 1
+</button>
+
+<img id="img1" src="vscode1.png" style="display:none;">
+</div>
