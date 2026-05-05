@@ -321,7 +321,7 @@ Tampilkan VS Code 1
 <h3>Kode Program VS Code:</h3>
 <div class="code-box">
 <pre><code>
-    // Nama  : Yoza Ulpia Rafila
+// Nama  : Yoza Ulpia Rafila
 // NIM   : 251410004
 // Kelas : SI.2A
 
@@ -402,7 +402,7 @@ Tampilkan VS Code 2
    <h3>Kode Program VS Code:</h3>
 <div class="code-box">
 <pre><code>
-    // Nama  : Yoza Ulpia Rafila
+// Nama  : Yoza Ulpia Rafila
 // NIM   : 251410004
 // Kelas : SI.2A
 
@@ -441,4 +441,92 @@ Tampilkan VS Code 3
 </button>
 
 <img id="img3" src="vscode3.png" style="display:none;">
+</div>
+
+<!-- 4 -->
+<div class="section">
+<h2>4.Class Box<T></T></h2>
+<ul>
+  <li>
+    Pada program ini, <b>Box&lt;T&gt;</b> digunakan sebagai <i>generic class</i> 
+    yang berfungsi untuk menyimpan data dengan berbagai tipe sesuai dengan 
+    tipe yang diberikan.
+  </li>
+
+  <li>
+    Tipe <b>&lt;T&gt;</b> membuat class <b>Box</b> menjadi fleksibel, 
+    sehingga dapat digunakan untuk menyimpan data bertipe <b>int</b>, 
+    <b>String</b>, <b>double</b>, maupun tipe lainnya.
+  </li>
+
+  <li>
+    Variabel <b>_value</b> bersifat private dan digunakan untuk menyimpan nilai, 
+    sedangkan <b>getter value</b> digunakan untuk mengambil nilai tersebut dari luar class.
+  </li>
+
+  <li>
+    Method <b>setValue()</b> digunakan untuk mengubah nilai yang ada di dalam 
+    objek <b>Box</b> sesuai dengan tipe data yang telah ditentukan.
+  </li>
+
+  <li>
+    Pada fungsi <b>main()</b>, dibuat beberapa objek yaitu 
+    <b>Box&lt;int&gt;</b>, <b>Box&lt;String&gt;</b>, dan <b>Box&lt;double&gt;</b> 
+    untuk menunjukkan bahwa class dapat digunakan dengan berbagai tipe data.
+  </li>
+
+  <li>
+    Program menampilkan nilai awal dan nilai setelah diubah menggunakan 
+    <b>print()</b>, sehingga terlihat bahwa data dapat diakses dan dimodifikasi 
+    dengan aman.
+  </li>
+
+  <li>
+    Dengan penggunaan generic, program menjadi lebih aman dan terstruktur 
+    karena tipe data sudah ditentukan sejak awal, sehingga menghindari kesalahan 
+    tipe data saat program dijalankan.
+  </li>
+</ul>
+   <h3>Kode Program VS Code:</h3>
+<div class="code-box">
+<pre><code>
+// Nama  : Yoza Ulpia Rafila
+// NIM   : 251410004
+// Kelas : SI.2A
+
+class Box<T> {
+  T? _value;
+
+  Box(this._value);
+
+  T? get value => _value;
+
+  void setValue(T value) {
+    _value = value;
+  }
+}
+
+void main() {
+  var intBox = Box<int>(10);
+  print("Int Box: ${intBox.value}");
+
+  intBox.setValue(20);
+  print("Set Int: ${intBox.value}");
+
+  var stringBox = Box<String>("Hello");
+  print("String Box: ${stringBox.value}");
+
+  stringBox.setValue("World");
+  print("Set String: ${stringBox.value}");
+
+  var doubleBox = Box<double>(3.14);
+  print("Double Box: ${doubleBox.value}");
+}
+</code></pre>
+</div>
+<button class="button" onclick="showContent('img4')">
+Tampilkan VS Code 4
+</button>
+
+<img id="img4" src="vscode4.png" style="display:none;">
 </div>
