@@ -530,3 +530,84 @@ Tampilkan VS Code 4
 
 <img id="img4" src="vscode4.png" style="display:none;">
 </div>
+
+<!-- 5 -->
+<div class="section">
+<h2>5.Multiple Type Parameters</h2>
+<ul>
+  <li>
+    Pada program ini, <b>Pair&lt;K, V&gt;</b> merupakan <i>generic class</i> 
+    dengan dua parameter tipe yang digunakan untuk menyimpan sepasang data 
+    yang saling berhubungan, yaitu <i>key</i> dan <i>value</i>.
+  </li>
+
+  <li>
+    Parameter <b>&lt;K&gt;</b> digunakan sebagai tipe untuk <i>key</i>, 
+    sedangkan <b>&lt;V&gt;</b> digunakan sebagai tipe untuk <i>value</i>, 
+    sehingga class ini menjadi fleksibel untuk berbagai kombinasi tipe data.
+  </li>
+
+  <li>
+    Class <b>Pair</b> memiliki constructor untuk menginisialisasi nilai 
+    <i>key</i> dan <i>value</i> saat objek dibuat.
+  </li>
+
+  <li>
+    Method <b>printPair()</b> digunakan untuk menampilkan pasangan data 
+    <i>key</i> dan <i>value</i> ke layar menggunakan <b>print()</b>.
+  </li>
+
+  <li>
+    Pada fungsi <b>main()</b>, dibuat beberapa objek yaitu 
+    <b>Pair&lt;String, int&gt;</b>, <b>Pair&lt;String, String&gt;</b>, 
+    dan <b>Pair&lt;int, double&gt;</b> untuk menunjukkan bahwa class 
+    dapat digunakan dengan berbagai tipe data.
+  </li>
+
+  <li>
+    Program kemudian menampilkan isi dari masing-masing objek, sehingga 
+    terlihat bahwa setiap pasangan data diproses sesuai dengan tipe yang 
+    telah ditentukan.
+  </li>
+
+  <li>
+    Dengan penggunaan generic, program menjadi lebih aman, fleksibel, 
+    dan mengurangi kemungkinan kesalahan tipe data saat dijalankan.
+  </li>
+</ul>
+   <h3>Kode Program VS Code:</h3>
+<div class="code-box">
+<pre><code>
+    // Nama  : Yoza Ulpia Rafila
+// NIM   : 251410004
+// Kelas : SI.2A
+
+class Pair<K, V> {
+  K key;
+  V value;
+
+  Pair(this.key, this.value);
+
+  void printPair() {
+    print("Key: $key, Value: $value");
+  }
+}
+
+void main() {
+  var pair1 = Pair<String, int>("age", 30);
+  pair1.printPair();
+
+  var pair2 = Pair<String, String>("name", "Alice");
+  pair2.printPair();
+
+  var pair3 = Pair<int, double>(1, 2.71);
+  pair3.printPair();
+}
+</code></pre>
+</div>
+<button class="button" onclick="showContent('img5')">
+Tampilkan VS Code 5
+</button>
+
+<img id="img5" src="vscode5.png" style="display:none;">
+</div>
