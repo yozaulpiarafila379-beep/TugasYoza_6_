@@ -992,3 +992,98 @@ Tampilkan VS Code 10
 <img id="img10" src="vscode10.png" style="display:none;">
 </div>                  
       
+<!-- 11 -->
+<div class="section">
+<h2>11.Praktik Generic Class & Fungsi</h2>
+<ul>
+  <li>
+    <b>Repository&lt;T&gt;</b> adalah generic class yang digunakan untuk menyimpan dan mengelola data dalam bentuk list dengan tipe yang fleksibel.
+  </li>
+
+  <li>
+    Tipe <b>&lt;T&gt;</b> membuat Repository dapat digunakan untuk berbagai jenis data seperti int, String, atau tipe lainnya.
+  </li>
+
+  <li>
+    Method <b>save()</b> digunakan untuk menambahkan data ke dalam list, <b>getById()</b> untuk mengambil data berdasarkan index, dan <b>getAll()</b> untuk mengambil semua data.
+  </li>
+
+  <li>
+    <b>swap&lt;T&gt;</b> adalah generic function yang digunakan untuk menukar dua elemen dalam sebuah list tanpa bergantung pada tipe data.
+  </li>
+
+  <li>
+    <b>Triple&lt;A, B, C&gt;</b> adalah generic class dengan tiga parameter tipe yang digunakan untuk menyimpan tiga jenis data berbeda dalam satu objek.
+  </li>
+
+  <li>
+    Di dalam fungsi main, Repository digunakan untuk tipe int, swap digunakan pada list, dan Triple digunakan untuk menggabungkan String, int, dan double.
+  </li>
+
+  <li>
+    Penggunaan generic membuat kode lebih fleksibel, reusable, dan type-safe karena dapat digunakan untuk berbagai tipe data tanpa mengubah struktur program.
+  </li>
+</ul>    
+<h3>Kode Program VS Code:</h3>
+<div class="code-box">
+<pre><code>
+// Nama  : Yoza Ulpia Rafila
+// NIM   : 251410004
+// Kelas : SI.2A
+
+// Repository Generic
+class Repository<T> {
+  List<T> _items = [];
+
+  void save(T item) {
+    _items.add(item);
+  }
+
+  T getById(int id) {
+    return _items[id];
+  }
+
+  List<T> getAll() {
+    return _items;
+  }
+}
+
+// Fungsi swap
+void swap<T>(List<T> list, int i, int j) {
+  var temp = list[i];
+  list[i] = list[j];
+  list[j] = temp;
+}
+
+// Class Triple
+class Triple<A, B, C> {
+  A first;
+  B second;
+  C third;
+
+  Triple(this.first, this.second, this.third);
+}
+
+void main() {
+  var repo = Repository<int>();
+  repo.save(10);
+  repo.save(20);
+
+  print(repo.getAll());
+
+  var list = [1, 2, 3];
+  swap(list, 0, 2);
+  print(list);
+
+  var triple = Triple<String, int, double>("Age", 21, 1.75);
+  print("${triple.first}, ${triple.second}, ${triple.third}");
+}    
+</code></pre>
+</div>
+<button class="button" onclick="showContent('img11')">
+Tampilkan VS Code 11
+</button>
+
+<img id="img11" src="vscode11.png" style="display:none;">
+</div>                  
+      
