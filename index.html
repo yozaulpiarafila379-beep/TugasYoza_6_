@@ -675,3 +675,87 @@ Tampilkan VS Code 6
 
 <img id="img6" src="vscode6.png" style="display:none;">
 </div>
+
+<!-- 7 -->
+<div class="section">
+<h2>7.Generic Dengan Extends</h2>
+<ul>
+  <li>
+    Pada program ini, <b>NumberBox&lt;T&gt;</b> merupakan <i>generic class</i> 
+    yang digunakan untuk menyimpan data dengan tipe tertentu, namun memiliki 
+    batasan hanya untuk tipe numerik.
+  </li>
+
+  <li>
+    Penggunaan <b>&lt;T extends num&gt;</b> berarti tipe <b>T</b> hanya boleh 
+    berupa tipe data yang termasuk dalam kategori angka, seperti <b>int</b> 
+    dan <b>double</b>.
+  </li>
+
+  <li>
+    Hal ini membuat class <b>NumberBox</b> tidak dapat digunakan untuk tipe 
+    selain numerik, misalnya <b>String</b>, sehingga meningkatkan keamanan 
+    tipe data (<i>type safety</i>).
+  </li>
+
+  <li>
+    Constructor <b>NumberBox(this.value)</b> digunakan untuk menginisialisasi 
+    nilai awal saat objek dibuat.
+  </li>
+
+  <li>
+    Method <b>getValue()</b> digunakan untuk mengambil dan mengembalikan 
+    nilai yang tersimpan di dalam objek.
+  </li>
+
+  <li>
+    Pada fungsi <b>main()</b>, dibuat objek <b>NumberBox&lt;int&gt;</b> dan 
+    <b>NumberBox&lt;double&gt;</b> yang menunjukkan bahwa class hanya dapat 
+    digunakan untuk tipe numerik.
+  </li>
+
+  <li>
+    Baris <b>NumberBox&lt;String&gt;</b> tidak dapat digunakan karena akan 
+    menghasilkan error, sebab String bukan termasuk tipe numerik.
+  </li>
+
+  <li>
+    Dengan penggunaan bounded generic, program menjadi lebih aman karena 
+    tipe data dibatasi sesuai kebutuhan, sehingga mengurangi kesalahan saat 
+    program dijalankan.
+  </li>
+</ul>    
+<h3>Kode Program VS Code:</h3>
+<div class="code-box">
+<pre><code>
+// Nama  : Yoza Ulpia Rafila
+// NIM   : 251410004
+// Kelas : SI.2A
+
+class NumberBox<T extends num> {
+  T value;
+
+  NumberBox(this.value);
+
+  T getValue() {
+    return value;
+  }
+}
+
+void main() {
+  var intBox = NumberBox<int>(10);
+  print("Int: ${intBox.getValue()}");
+
+  var doubleBox = NumberBox<double>(3.14);
+  print("Double: ${doubleBox.getValue()}");
+
+  // var stringBox = NumberBox<String>("test"); // ❌ Error
+}    
+</code></pre>
+</div>
+<button class="button" onclick="showContent('img7')">
+Tampilkan VS Code 7
+</button>
+
+<img id="img7" src="vscode7.png" style="display:none;">
+</div>      
